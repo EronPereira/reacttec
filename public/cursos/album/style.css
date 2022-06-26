@@ -1,0 +1,23 @@
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #e7e3ff;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #420278;
+  background-image: url("../album/assets/brand/React-Back.jpg");
+}
+
+.card-body{
+  background-color: #7925b8;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container-fluid{
+  background-color: #7925b8;
+}
+
+.img{
+  width: 100%;
+  height: 100%;
+/*   background-size: cover; */
+}

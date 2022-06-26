@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Efetuar Pagamento</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="/public/pagamento/checkout/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"> <img src="public/pagamento/checkout/assets/brand/REACT.png" alt="logo" width="90px" height="90px"> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <!--Linkar para outro HTML-->
+            <a class="nav-link active" aria-current="page" href="/principal">PRINCIPAL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cursos">CURSOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">LOGIN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cadastro">REGISTRAR-SE</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <img alt="Carrinho"width="50px" height="50px" src="data:image/png;base64,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"/>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<br><br><br><br>  
+    <!-- Custom styles for this template -->
+    <link href="/public/pagamento/checkout/form-validation.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h2>EFETUAR PAGAMENTO</h2>
+      <p>PREENCHA OS DADOS PARA EFETUAR SEU PAGAMENTO</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span >Cartão</span>
+          <span class="badge rounded-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Curso 1</h6>
+              <small class="text-muted">descrição</small>
+            </div>
+            <span class="text-muted">R$ 250,00</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Curso 2</h6>
+              <small class="text-muted">descrição</small>
+            </div>
+            <span class="text-muted">R$ 160,00</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Curso 3</h6>
+              <small class="text-muted">descrição</small>
+            </div>
+            <span class="text-muted">R$85,00</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between bg-light">
+            <div class="text-success">
+              <h6 class="my-0">Cupom de Promoção</h6>
+              <small>Promoção</small>
+            </div>
+            <span class="text-success">−R$ 50,00</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total (R$)</span>
+            <strong>R$ 445,00</strong>
+          </li>
+        </ul>
+
+        <form class="card p-2">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Cupom de Promoção">
+            <button type="submit" class="btn btn-secondary">Resgatar</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Endereço de Cobrança</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+              O primeiro nome válido é obrigatório.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Sobrenome</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                O sobrenome válido é obrigatório
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="username" class="form-label">Nome do usuário</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" id="username" placeholder="Nome do usuário" required>
+              <div class="invalid-feedback">
+                  Seu nome de usuário é obrigatório
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-muted"></span></label>
+              <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+              <div class="invalid-feedback">
+                Insira um endereço de e-mail válido para atualizações de envio
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Endereço</label>
+              <input type="text" class="form-control" id="address" placeholder="Digite se endereço" required>
+              <div class="invalid-feedback">
+                Por favor insira seu endereço de entrega.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address2" class="form-label">Endereço 2 <span class="text-muted"></span></label>
+              <input type="text" class="form-control" id="address2" placeholder="Apartamento ou casa">
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">País</label>
+              <select class="form-select" id="country" required>
+                <option value="">Selecione o país</option>
+                <option>Brasil</option>
+              </select>
+              <div class="invalid-feedback">
+                Selecione um país válido.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="state" class="form-label">Estado</label>
+              <select class="form-select" id="state" required>
+                <option value="">Selecione o estado</option>
+                <option>Pernambuco</option>
+              </select>
+              <div class="invalid-feedback">
+                
+Forneça um estado válido.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="zip" class="form-label">CEP</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+                CEP obrigatório
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+            <label class="form-check-label" for="same-address">O endereço de entrega é o mesmo que meu endereço de cobrança?</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info">
+            <label class="form-check-label" for="save-info">Salve esta informação para a próxima vez</label>
+          </div>
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">Pagamento</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+              <label class="form-check-label" for="credit">Cartão de crédito</label>
+            </div>
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="debit">Cartão Débito</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+              <label class="form-check-label" for="paypal">PayPal</label>
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Nome do cartão</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required>
+              <small>Nome completo conforme exibido no cartão</small>
+              <div class="invalid-feedback">
+                O nome no cartão é obrigatório
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Número do cartão crédito</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required>
+              <div class="invalid-feedback">
+                
+O número do cartão de crédito é obrigatório
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Expiração</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+              <div class="invalid-feedback">
+                Data de expiração obrigatória
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+              <div class="invalid-feedback">
+                Código de segurança obrigatório
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="my-5 pt-5 text-center text-small">
+    <p class="mb-1">&copy; 2021-2022 Ômega Company</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+
+    <script src="/public/pagamento/assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="/public/pagamento/form-validation.js"></script>
+  </body>
+</html>

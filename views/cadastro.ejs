@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">   
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Cadastro</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+
+    
+    <!-- Bootstrap core CSS -->
+<link href="/public/cadastro/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"> <img src="/public/cadastro/assets/brand/REACT.png" alt="logo" width="90px" height="90px"> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <!--Linkar para outro HTML-->
+            <a class="nav-link active" aria-current="page" href="/">PRINCIPAL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cursos">CURSOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">LOGIN</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+<br><br><br><br>
+    
+    <!-- Custom styles for this template -->
+    <link href="/public/cadastro/form-validation.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<div class="container">
+  <form action="/cadastro" method="POST">
+  <main>
+    <div class="py-5 text-center">
+      
+      <h1>Cadastro</h1>
+      <p class="lead">Preencha os campos a seguir com as informações solicitadas. </p>
+    </div>
+      
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Insira seus dados</h4>
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Primeiro nome<span style="color: #ffff00">*</span></label>
+              <input type="text" class="form-control" id="firstName" name="firstName" placeholder="nome" value="" required>
+              <div class="invalid-feedback">
+                O primeiro nome é obrigatório!
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Último nome<span style="color: #ffff00">*</span></label>
+              <input type="text" class="form-control" id="lastName" name="lastName" placeholder="sobrenome" value="" required>
+              <div class="invalid-feedback">
+                O último nome é obrigatório!
+              </div>
+            </div>
+
+            <div class="col-12" id="id1">
+              <label for="username" class="form-label">Nome de usuário<span style="color: #ffff00">*</span></label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+              <div class="invalid-feedback">
+                  O nome de usuário é obrigatório!
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email<span style="color: #ffff00">*</span></label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Entre com um email válido!
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="senha" class="form-label">Senha<span style="color: #ffff00">*</span></label>
+              <input type="password" class="form-control" id="senha" name="senha" placeholder="">
+              <div class="invalid-feedback">
+                Digite uma senha!
+              </div>
+            </div>
+
+          <br>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+            <label class="form-check-label" for="same-address">Desejo receber Emails de notificações e novidades da plataforma </label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info">
+            <label class="form-check-label" for="save-info">Concordo com os termos de uso e privacidade<span style="color: #ffff00">*</span> </label>
+          </div>
+
+          <hr class="my-4">
+            <p><span style="color: #ffff00">*</span> Campos obrigatórios</p>
+
+          <button class="w-100 btn btn-primary btn-lg" name="submit" id="submit" type="submit">Enviar cadastro</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  </form>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1"><span style="color: #e7e3ff">&copy; 2021-2022 Ômega Company</span></p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+    <script src="/public/cadastro/assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="/public/cadastro/form-validation.js"></script>
+  </body>
+</html>

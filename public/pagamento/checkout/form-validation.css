@@ -1,0 +1,15 @@
+body{
+  color: #e7e3ff;
+  background-color: #420278;
+  font-family: 'Montserrat', sans-serif;
+  background-image: url("../checkout/assets/brand/React-Back.jpg");
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.container {
+  max-width: 960px;
+}
+
+.container-fluid{
+  background-color: #7925b8;
+}
